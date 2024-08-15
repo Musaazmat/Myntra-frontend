@@ -7,6 +7,7 @@ function FetchItems() {
     const fetchStatus = useSelector(store => store.fetchStatus);
     const dispatch = useDispatch();
     // console.log(fetchStatus);
+    const apiUrl = import.meta.env.VITE_API_KEY
 
 
     useEffect(() => {
@@ -16,7 +17,7 @@ function FetchItems() {
         const signal = controller.signal;
     
         dispatch(fetchStatusActions.markFetchingStarted());
-        fetch("http://localhost:8080/items", { signal })
+        fetch(`${apiUrl}/items`, { signal })
         .then((res) => res.json())
         .then(( { items }) => {
             dispatch(fetchStatusActions.markFetchDone());
