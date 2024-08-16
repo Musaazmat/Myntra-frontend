@@ -272,7 +272,7 @@ select:focus{
     color: #fff;
     left: 13px;
     top: -44px;
-    font-weight: 700; */
+    font-weight: 700; 
     cursor: pointer;
 }
 
@@ -535,7 +535,7 @@ a.action_container:link {
         display:flex;
         max-width:200px;
         justify-content:space-evenly;
-        align-item:center;
+        align-items:center;
         flex:1;
         margin:10px 10px 0 0 ;
         position:relative;
