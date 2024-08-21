@@ -35,10 +35,8 @@ header {
     position: absolute;
     top: 10px;
     left: 17px;
-    z-index: 1100;
+    z-index: 3500;
     display:none;
-
-
 }
 
 .nav_bar a {
@@ -80,15 +78,7 @@ select:focus{
     border:none  !important;
     box-shadow:none !important;
 }
-/* .search_icon {
-    box-sizing: content-box;
-    height: 20px;
-    padding: 10px;
-    background-color: #f5f5f6;
-    color: #282c3f;
-    font-weight: 300;
-    border-radius: 4px 0 0 4px;
-} */
+
 .search_input {
     color: #696e79;
     background-color: #f5f5f6;
@@ -97,10 +87,6 @@ select:focus{
     border: 0;
     border-radius: 0 4px 4px 0;
 }
-/* .form-control{
-    border: 0;
-
-} */
 
 .action_bar {
     display: flex;
@@ -346,6 +332,7 @@ a.action_container:link {
 }
 
 .btn-place-order {
+    position:relative;
     width: 100%;
     letter-spacing: 1px;
     font-size: 14px;
@@ -356,6 +343,7 @@ a.action_container:link {
     background-color: rgb(255, 63, 108);
     color: rgb(255, 255, 255);
     cursor: pointer;
+    z-index:1000;
 }
 
 .bag-item-container {
@@ -419,6 +407,7 @@ a.action_container:link {
     width: 14px;
     height: 14px;
     cursor: pointer;
+    z-index:1400;
 }
 
 .spinner{
@@ -440,47 +429,52 @@ a.action_container:link {
 .empty_bag{
     display:flex;
     justify-content:center;
-    gap:5px;
+    gap:px;
+    font-size:18px;
 }
 
-.empty_bag p{
-    font-size:15px;
-}
 .empty_bag a{
-    z-index:1000;
+    text-decoration:none;
+    color:black;
+    z-index:2000;
+}
+
+.empty_bag span{
+    margin-left:5px;
 }
 
 
+.my-swalpopup{
+    z-index:1500 !important;
+    position:fixed !important
+}
 
 
 @media (max-width: 760px){
     .nav_bar , .logo_container {
     display:none;
     }
-    .cross_icon{
-        position:absolute;
-        left:100px;
-    }
-
-    /* .hamburger-display {
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        display:block;
-        cursor:pointer;
-        margin:0px 0px 4px  15px;
-    } */
 
     .hamburger-display{
-        /* position:absolute; */
         display:block;
         top:15px;
-        /* z-index:1100; */
+    }
+
+    .cross_icon{
+        position:fixed;
+        left:120px;
     }
 
     .res_logoContainer{
-        padding: 0 0 0 60px;
+        padding: 1px 0 0 60px;
         display:block;
+    }
+
+    .res_logoContainer h3 a{
+        color: black;
+        position: relative;
+        z-index: 1000;
+        text-decoration: none;
     }
 
     header{
@@ -503,19 +497,29 @@ a.action_container:link {
         background-color: white;
         color: #fff;
         transition: left 0.3s ease; /* Smooth transition for sliding effect */
-        z-index: 1000;
+        z-index: 0;
+        display:none;
         padding: 20px;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     }
 
     .side-navbar.open {
         left: 0; /* Slide in when menu is open */
+        display: block;
+        z-index: 3000;
     }
+    .side-navbar.open .cross_icon{
+        position:fixed;
+        z-index:3400;
+        visibility:visible;
+    }
+
     .side-navbar nav {
         display: flex;
         flex-direction: column;
         width:10%;
     }
+
     .side-navbar nav a{
         color: #black;
         margin-top: 6px;
@@ -523,14 +527,16 @@ a.action_container:link {
         font-size: 13px;
         border-bottom:none;
     }
+
     .side-navbar nav a:hover {
-        /* background-color: #444; */
         border-bottom:none;
 
     }
+
     .action_bar{
         display:none;
     }
+
     .res_action{
         display:flex;
         max-width:200px;
@@ -541,18 +547,22 @@ a.action_container:link {
         position:relative;
         z-index:1100;
     }
+
     .bag-item-count{
         left: 15px;
         top: -35px;
     }
+
     .footer_column h3 {
         font-size:9px;
         margin-bottom: 18px;
     }
+
     .footer_column a {
         font-size: 12px;
         padding-bottom: 5px;
     }
+    
 }
 
 
@@ -585,12 +595,12 @@ a.action_container:link {
 
 }
 
-@media(max-width:360px){
-
-    .btn-place-order{
-    font-size:0.9em;
-    padding:7px 12px;
+@media(max-width:430px){
+    .bag-items-container{
+        min-width:350px;
     }
-
+    .remove-from-cart{
+        z-index:2000;
+    }
 }
 

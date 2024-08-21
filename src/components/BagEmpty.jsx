@@ -7,12 +7,12 @@ import { Link } from "react-router-dom";
 function BagEmpty() {
   return (
         <div className='empty_bag'>
-        <p >Your Bag is Empty</p>
-        <Link to="/"><BsBagPlus style={{
+        <Link to="/">Your Bag is Empty
+        <span><BsBagPlus style={{
           color:'black',
-          fontSize:'20px',
+          fontSize:'18px',
           cursor:'pointer',
-        }}/></Link>
+        }}/></span></Link>
         </div>
   )
 }

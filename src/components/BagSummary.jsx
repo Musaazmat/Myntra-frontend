@@ -33,8 +33,11 @@ function BagSummary() {
             icon: "success",
             title: "Your order has been Placed",
             showConfirmButton: false,
-            timer: 1500
-            });
+            timer: 1500,
+            customClass:{
+                popup:'my-swalpopup'
+            }
+            })
     }
 
 
@@ -60,8 +63,8 @@ function BagSummary() {
                     <span className="price-item-value">₹{finalPayment}</span>
                 </div>
             </div>
-            <button className="btn-place-order">
-                <div className="css-xjhrni" onClick={handleFinalOrder}>PLACE ORDER</div>
+            <button className="btn-place-order" onClick={handleFinalOrder}>
+                <div className="css-xjhrni" >PLACE ORDER</div>
             </button>
         </div>
     )

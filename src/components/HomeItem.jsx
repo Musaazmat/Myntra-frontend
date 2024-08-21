@@ -11,7 +11,8 @@ function HomeItem({ item }) {
     const elementFound = bagItems.indexOf(item.id) >=0 ;
     console.log(item.id, elementFound);
 
-    const handleAddToBag = () =>{
+    const handleAddToBag = (event) =>{
+        event.preventDefault();
     dispatch(bagActions.addToBag(item.id));
     };
 

@@ -22,19 +22,14 @@ const Header = () => {
     const installApp = () =>{
         Swal.fire({
             title: "Install App",
-            // showDenyButton: true,
             showCancelButton: true,
             confirmButtonText: "Install",
-            // denyButtonText: `Cancel`,
             }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
                 Swal.fire("Installed", "", "success");
             } 
             });
     }
-
-    
 
     return (
     <header>
@@ -42,8 +37,8 @@ const Header = () => {
             {menuOpen ? <RxCross2 size={25} className="cross_icon"/>: <GiHamburgerMenu size={25}/> }
         </div>
 
-        <div className="res_logoContainer">
-        <h3>Myntra</h3>
+        <div className="res_logoContainer"><h3>
+        <Link to="/">Myntra</Link> </h3>
         </div>
         <div className="logo_container">
             <Link to="/"><img className="myntra_home" src="images/myntra_logo.webp" alt="Myntra Home" /></Link>
